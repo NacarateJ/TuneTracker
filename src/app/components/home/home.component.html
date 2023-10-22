@@ -1,1 +1,8 @@
-<p>home works!</p>
+<h1>Welcome to TuneTracker!</h1>
+
+<ul *ngIf="fetchedData$ | async as data">
+  <li *ngFor="let album of data.feed.entry">
+    {{ album.title.label }}
+  </li>
+</ul>
+
