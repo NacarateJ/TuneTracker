@@ -10,6 +10,7 @@ import { Observable, tap } from 'rxjs';
 export class HomeComponent {
   fetchedData$: Observable<any>;
 
+  // Dependency injection - allows the component to use the service to fetch data
   constructor(private dataService: DataService) {
     this.fetchedData$ = this.dataService.getData().pipe(
       tap((data) => {
