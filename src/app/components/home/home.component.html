@@ -1,8 +1,13 @@
 <h1>Welcome to TuneTracker!</h1>
 
-<ul *ngIf="fetchedData$ | async as data">
-  <li *ngFor="let album of data.feed.entry">
-    {{ album.title.label }}
-  </li>
-</ul>
-
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" *ngIf="fetchedData$ | async as data">
+      <div class="col" *ngFor="let album of data.feed.entry">
+        <div class="card">
+          <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album.title.label }} Cover">
+          <div class="card-body">
+            <h5 class="card-title">{{ album.title.label }}</h5>
+            <p class="card-text">{{ album.category.attributes.term }} - {{ album['im:price'].label }}</p>
+          </div>
+        </div>
+      </div>
+  </div>
