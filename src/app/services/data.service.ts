@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +8,8 @@ import { tap } from 'rxjs';
 export class DataService {
   private iTunesApiUrl =
     'https://itunes.apple.com/us/rss/topalbums/limit=100/json';
+
+  public search = new BehaviorSubject<string>("");
 
   // Dependency injection - makes the  HttpClient available for making HTTP requests
   constructor(private http: HttpClient) {}
