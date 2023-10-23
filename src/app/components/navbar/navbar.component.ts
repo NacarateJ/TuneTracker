@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,10 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   public searchTerm: string = '';
 
+  constructor(private dataService: DataService) {}
+
   search(event: any) {
     this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
+    this.dataService.search.next(this.searchTerm);
   }
 }
