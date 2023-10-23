@@ -8,7 +8,10 @@
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <div class="input-group">
-        <input class="form-control" type="text" [(ngModel)]="searchTerm" name="searchTerm" (keyup)="search($event)" placeholder="Search">
+        <input class="form-control" type="text" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search">
+        <span class="input-group-text bg-white">
+          <i class="bi bi-search"></i>
+        </span>
         </div>
     </div>
   </div>
