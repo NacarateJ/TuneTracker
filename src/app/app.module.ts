@@ -8,9 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, FilterPipe],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FilterPipe, HeroComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
