@@ -1,7 +1,7 @@
 <h1>Welcome to TuneTracker!</h1>
 
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4" *ngIf="fetchedData$ | async as data">
-      <div class="col" *ngFor="let album of data.feed.entry">
+      <div class="col" *ngFor="let album of data.feed.entry | filter: searchKey: ['title.label', 'category.attributes.term', 'im:artist.label']">
         <div class="card" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
           <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album.title.label }} Cover">
           <div class="card-body">
