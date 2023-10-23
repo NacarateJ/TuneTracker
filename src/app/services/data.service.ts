@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, tap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -17,6 +17,5 @@ export class DataService {
   getData() {
     return this.http
       .get(this.iTunesApiUrl)
-      .pipe(tap((response) => console.log('API Response SERVICE', response)));
   }
 }
