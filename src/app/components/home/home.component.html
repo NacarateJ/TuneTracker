@@ -1,4 +1,5 @@
-<h1 class="m-5">Top 100 Albums</h1>
+<div *ngIf="showHome">
+  <h1 class="m-5">Top 100 Albums</h1>
 
   <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 m-5" *ngIf="fetchedData$ | async as data">
     <div *ngIf="!(data.feed.entry | filter: searchKey : ['title.label', 'category.attributes.term', 'im:artist.label']).length" class="custom-message-box">
@@ -15,3 +16,4 @@
       </div>
     </div>
   </div>
+</div>
