@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent {
   fetchedData$: Observable<any>;
+  searchKey: string = '';
 
   // Dependency injection - allows the component to use the service to fetch data
   constructor(private dataService: DataService) {
