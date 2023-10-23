@@ -19,4 +19,10 @@ export class HomeComponent {
   redirectToAlbum(albumLink: string) {
     window.open(albumLink, '_blank');
   }
+
+  ngOnInit() {
+    this.dataService.search.subscribe((val: any) => {
+      this.searchKey = val;
+    });
+  }
 }
