@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 export class HomeComponent {
   fetchedData$: Observable<any>;
   searchKey: string = '';
+  noResultsMessage: string =
+    'Sorry, there are no albums that match your search';
 
   // Dependency injection - allows the component to use the service to fetch data
   constructor(private dataService: DataService) {
