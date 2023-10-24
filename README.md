@@ -1,27 +1,28 @@
 # TuneTracker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+TuneTracker is a web application that provides access to the top 100 albums based on the iTunes API. Whether you're a music enthusiast or just looking for some great tunes to enjoy, TuneTracker has you covered. Discover the latest albums, explore different categories, and find your favorite artists with ease.
 
-## Development server
+### Setup & Usage
+- Clone the repository and navigate to the project directory.
+- Install dependencies: `npm install`
+- Start the development server: `ng serve`
+- Open your web browser and go to http://localhost:4200 to access the application.
+- To run the tests: `ng test` will execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Features
+- Show albums based on button click.
+- Window scrolling to improve user experience.
+- Search bar to filter albums by title, category, or artist name.
+- Sticky navbar to facilitate search and improve user experience.
+- An error message is displayed if no albums matching the user's search are found.
+- Click on an album to view more details and listen to the tracks.
 
-## Code scaffolding
+### Technologies
+- [Angular](https://angular.io/): The application is built using the Angular framework, providing a robust and dynamic user interface.
+- [TypeScript](https://www.typescriptlang.org/): Utilized for clean and type-safe coding.
+- [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): For responsive and visually appealing designs.
+- [SCSS](https://sass-lang.com/documentation/syntax/): To enhance and maintain the project's styles
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Images & Logo:
+- Hero image - [Ideogram](https://ideogram.ai/t/trending)
+- Logo - [Looka](https://looka.com/)
