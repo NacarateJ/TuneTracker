@@ -11,5 +11,18 @@ export class HeroComponent {
 
   showHome() {
     this.HomeStateService.setShowHome(true);
+    this.scrollToHome();
+  }
+
+  private scrollToHome() {
+    setTimeout(() => {
+      const homeComponent = document.getElementById('homeComponent');
+      if (homeComponent) {
+        window.scrollTo({
+          top: homeComponent.offsetTop,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
   }
 }
