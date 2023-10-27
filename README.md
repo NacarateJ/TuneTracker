@@ -24,6 +24,7 @@ https://github.com/NacarateJ/tuneTracker/assets/114256348/c1c281ae-3d4f-4315-b72
 - Sticky navbar to facilitate search and improve user experience.
 - An error message is displayed if no albums matching the user's search are found.
 - Click on an album to view more details and listen to the tracks.
+- The app is responsive, following a mobile-first design approach.
 
 ### Technologies
 - [Angular](https://angular.io/): The application is built using the Angular framework, providing a robust and dynamic user interface.
