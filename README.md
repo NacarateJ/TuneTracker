@@ -2,6 +2,14 @@
 
 TuneTracker is a web application that provides access to the top 100 albums based on the iTunes API. Whether you're a music enthusiast or just looking for some great tunes to enjoy, TuneTracker has you covered. Discover the latest albums, explore different categories, and find your favorite artists with ease.
 
+<div align="center">
+
+https://github.com/NacarateJ/tuneTracker/assets/114256348/c1c281ae-3d4f-4315-b72a-13f585920bda
+
+<div/>
+
+<div align="left">
+  
 ### Setup & Usage
 - Clone the repository and navigate to the project directory.
 - Install dependencies: `npm install`
@@ -26,3 +34,4 @@ TuneTracker is a web application that provides access to the top 100 albums base
 #### Images & Logo:
 - Hero image - [Ideogram](https://ideogram.ai/t/trending)
 - Logo - [Looka](https://looka.com/)
+<div/>
