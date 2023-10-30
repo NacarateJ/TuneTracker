@@ -4,16 +4,16 @@ import { HomeStateService } from 'src/app/services/home-state.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-albums',
+  templateUrl: './albums.component.html',
+  styleUrls: ['./albums.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class AlbumsComponent implements OnInit {
   fetchedData$: Observable<any>;
   searchKey: string = '';
   noResultsMessage: string =
     'Sorry, there are no albums that match your search';
-  showHome: boolean = false;
+  showAlbums: boolean = false;
 
   // Dependency injection - allows the component to use the service to fetch data
   constructor(
@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.homeStateService.showHome$.subscribe((showHome) => {
-      this.showHome = showHome;
+    this.homeStateService.showAlbums$.subscribe((showAlbums) => {
+      this.showAlbums = showAlbums;
     });
 
     this.dataService.search.subscribe((val: any) => {

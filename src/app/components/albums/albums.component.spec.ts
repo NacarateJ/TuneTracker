@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { AlbumsComponent } from './albums.component';
 import { DataService } from 'src/app/services/data.service';
 import { HomeStateService } from 'src/app/services/home-state.service';
 import { of } from 'rxjs';
 
 describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+  let component: AlbumsComponent;
+  let fixture: ComponentFixture<AlbumsComponent>;
 
   // Create mock services
   const dataServiceStub = {
@@ -21,13 +21,13 @@ describe('HomeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [AlbumsComponent],
       providers: [
         { provide: DataService, useValue: dataServiceStub },
         { provide: HomeStateService, useValue: homeStateServiceStub },
       ],
     });
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(AlbumsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

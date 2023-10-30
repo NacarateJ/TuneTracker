@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class HomeStateService {
   private showHomeComponent = new BehaviorSubject<boolean>(false);
 
-  showHome$: Observable<boolean> = this.showHomeComponent.asObservable();
+  showAlbums$: Observable<boolean> = this.showHomeComponent.asObservable();
 
   setShowHome(value: boolean) {
     this.showHomeComponent.next(value);
