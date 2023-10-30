@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class HomeStateService {
+export class AlbumsStateService {
   private showAlbumsComponent = new BehaviorSubject<boolean>(false);
 
   showAlbums$: Observable<boolean> = this.showAlbumsComponent.asObservable();

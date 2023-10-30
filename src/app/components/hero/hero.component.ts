@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeStateService } from 'src/app/services/home-state.service';
+import { AlbumsStateService } from 'src/app/services/albums-state.service';
 
 @Component({
   selector: 'app-hero',
@@ -7,10 +7,10 @@ import { HomeStateService } from 'src/app/services/home-state.service';
   styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent {
-  constructor(private HomeStateService: HomeStateService) {}
+  constructor(private AlbumsStateService: AlbumsStateService) {}
 
   showAlbums() {
-    this.HomeStateService.setShowAlbums(true);
+    this.AlbumsStateService.setShowAlbums(true);
     this.scrollToAlbums();
   }
 

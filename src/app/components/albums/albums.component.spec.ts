@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlbumsComponent } from './albums.component';
 import { DataService } from 'src/app/services/data.service';
-import { HomeStateService } from 'src/app/services/home-state.service';
+import { AlbumsStateService } from 'src/app/services/albums-state.service';
 import { of } from 'rxjs';
 
 describe('AlbumsComponent', () => {
@@ -15,8 +15,8 @@ describe('AlbumsComponent', () => {
     search: of(''),
   };
 
-  const homeStateServiceStub = {
-    showHome$: of(false),
+  const albumsStateServiceStub = {
+    showAlbums$: of(false),
   };
 
   beforeEach(() => {
@@ -24,7 +24,7 @@ describe('AlbumsComponent', () => {
       declarations: [AlbumsComponent],
       providers: [
         { provide: DataService, useValue: dataServiceStub },
-        { provide: HomeStateService, useValue: homeStateServiceStub },
+        { provide: AlbumsStateService, useValue: albumsStateServiceStub },
       ],
     });
     fixture = TestBed.createComponent(AlbumsComponent);

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { HomeStateService } from 'src/app/services/home-state.service';
+import { AlbumsStateService } from 'src/app/services/albums-state.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -18,7 +18,7 @@ export class AlbumsComponent implements OnInit {
   // Dependency injection - allows the component to use the service to fetch data
   constructor(
     private dataService: DataService,
-    private homeStateService: HomeStateService
+    private albumsStateService: AlbumsStateService
   ) {
     this.fetchedData$ = this.dataService.getData();
   }
@@ -28,7 +28,7 @@ export class AlbumsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.homeStateService.showAlbums$.subscribe((showAlbums) => {
+    this.albumsStateService.showAlbums$.subscribe((showAlbums) => {
       this.showAlbums = showAlbums;
     });
 
