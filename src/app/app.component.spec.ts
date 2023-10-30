@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeroComponent } from './components/hero/hero.component';
-import { HomeComponent } from './components/home/home.component';
+import { AlbumsComponent } from './components/albums/albums.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
         AppComponent,
         NavbarComponent,
         HeroComponent,
-        HomeComponent,
+        AlbumsComponent,
       ],
     })
   );

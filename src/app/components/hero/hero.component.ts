@@ -9,17 +9,17 @@ import { HomeStateService } from 'src/app/services/home-state.service';
 export class HeroComponent {
   constructor(private HomeStateService: HomeStateService) {}
 
-  showHome() {
-    this.HomeStateService.setShowHome(true);
-    this.scrollToHome();
+  showAlbums() {
+    this.HomeStateService.setShowAlbums(true);
+    this.scrollToAlbums();
   }
 
-  private scrollToHome() {
+  private scrollToAlbums() {
     setTimeout(() => {
-      const homeComponent = document.getElementById('homeComponent');
-      if (homeComponent) {
+      const albumsComponent = document.getElementById('albumsComponent');
+      if (albumsComponent) {
         window.scrollTo({
-          top: homeComponent.offsetTop,
+          top: albumsComponent.offsetTop,
           behavior: 'smooth',
         });
       }

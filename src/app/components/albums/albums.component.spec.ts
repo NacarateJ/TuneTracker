@@ -5,7 +5,7 @@ import { DataService } from 'src/app/services/data.service';
 import { HomeStateService } from 'src/app/services/home-state.service';
 import { of } from 'rxjs';
 
-describe('HomeComponent', () => {
+describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
   let fixture: ComponentFixture<AlbumsComponent>;
 
