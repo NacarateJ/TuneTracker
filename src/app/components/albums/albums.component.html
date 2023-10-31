@@ -6,7 +6,7 @@
       {{ noResultsMessage }}
     </div>
 
-    <div class="col" *ngFor="let album of data.feed.entry | filter: searchKey: ['title.label', 'category.attributes.term', 'im:artist.label']">
+    <div class="col" *ngFor="let album of albums | filter: searchKey: ['title.label', 'category.attributes.term', 'im:artist.label']">
       <div class="card" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
         <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album.title.label }} Cover">
         <div class="card-body">
@@ -17,7 +17,7 @@
               <p class="card-text">{{ album.category.attributes.term }}</p>
             </div>
             <div class="col-md-4 text-end">
-              <i class="bi bi-heart"></i>
+              <i [ngClass]="favoriteAlbums[album.id.attributes['im:id']] ? 'bi bi-heart-fill text-danger' : 'bi bi-heart'" (click)="toggleFavorite(album); $event.stopPropagation();"></i>
             </div>
           </div>
         </div>
