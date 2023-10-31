@@ -36,20 +36,29 @@ export class AlbumsComponent implements OnInit {
   sortAlbums() {
     // Sort by favorites and then by the timestamp or original index
     this.albums.sort((a, b) => {
+      // Get the ids of albums being compared
       const aId = a.id.attributes['im:id'];
       const bId = b.id.attributes['im:id'];
+
+      // Check if the albums are favorited and save the timestamp if they are
       const aIsFavorite = this.favoriteAlbums[aId];
       const bIsFavorite = this.favoriteAlbums[bId];
 
+      // The most recently favorited one will come first
       if (aIsFavorite && bIsFavorite) {
         return bIsFavorite - aIsFavorite;
       }
+
+      // Negative values in a sort function mean "a comes before b" and vice versa
       if (aIsFavorite && !bIsFavorite) {
         return -1;
       }
+
       if (!aIsFavorite && bIsFavorite) {
         return 1;
       }
+
+      // If neither album is favorited, they remain in their original position
       return a.originalIndex - b.originalIndex;
     });
   }
