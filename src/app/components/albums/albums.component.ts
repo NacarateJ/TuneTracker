@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./albums.component.scss'],
 })
 export class AlbumsComponent implements OnInit {
-  fetchedData$: Observable<any>;
+  fetchedData$: Observable<any> = new Observable<any>();
   searchKey: string = '';
   noResultsMessage: string =
     'Sorry, there are no albums that match your search';
@@ -19,15 +19,15 @@ export class AlbumsComponent implements OnInit {
   constructor(
     private dataService: DataService,
     private albumsStateService: AlbumsStateService
-  ) {
-    this.fetchedData$ = this.dataService.getData();
-  }
+  ) {}
 
   redirectToAlbum(albumLink: string) {
     window.open(albumLink, '_blank');
   }
 
   ngOnInit() {
+    this.fetchedData$ = this.dataService.getData();
+
     this.albumsStateService.showAlbums$.subscribe((showAlbums) => {
       this.showAlbums = showAlbums;
     });
