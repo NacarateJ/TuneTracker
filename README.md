@@ -33,6 +33,6 @@ https://github.com/NacarateJ/tuneTracker/assets/114256348/c1c281ae-3d4f-4315-b72
 - [SCSS](https://sass-lang.com/documentation/syntax/): To enhance and maintain the project's styles
 
 #### Images & Logo:
-- Hero image - [Ideogram](https://ideogram.ai/t/trending)
+- Hero image - [DALL·E 3](https://openai.com/dall-e-3)
 - Logo - [Looka](https://looka.com/)
 <div/>
