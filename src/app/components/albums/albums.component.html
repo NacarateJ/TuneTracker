@@ -1,13 +1,13 @@
 <div *ngIf="showAlbums" id="albumsComponent">
   <h1 class="m-5">Top 100 Albums</h1>
 
-  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 m-5" *ngIf="fetchedData$ | async as data">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4 m-5 d-flex align-items-stretch" *ngIf="fetchedData$ | async as data">
     <div *ngIf="!(data.feed.entry | filter: searchKey : ['title.label', 'category.attributes.term', 'im:artist.label']).length" class="custom-message-box">
       {{ noResultsMessage }}
     </div>
 
     <div class="col" *ngFor="let album of albums | filter: searchKey: ['title.label', 'category.attributes.term', 'im:artist.label']">
-      <div class="card h-100" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
+      <div class="card h-100 shadow" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
         <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album.title.label }} Cover">
         <div class="card-body d-flex flex-column">
           <div class="row">
@@ -17,7 +17,7 @@
               <p class="card-text text-truncate">{{ album.category.attributes.term }}</p>
             </div>
             <div class="col-md-4 text-end">
-              <i [ngClass]="favoriteAlbums[album.id.attributes['im:id']] ? 'bi bi-heart-fill text-danger' : 'bi bi-heart'" (click)="toggleFavorite(album); $event.stopPropagation();"></i>
+              <i [ngClass]="favoriteAlbums[album.id.attributes['im:id']] ? 'bi bi-heart-fill text-danger fs-5' : 'bi bi-heart fs-5'" (click)="toggleFavorite(album); $event.stopPropagation();"></i>
             </div>
           </div>
         </div>
