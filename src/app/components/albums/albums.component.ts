@@ -3,6 +3,16 @@ import { DataService } from 'src/app/services/data.service';
 import { AlbumsStateService } from 'src/app/services/albums-state.service';
 import { Observable } from 'rxjs';
 
+interface Album {
+  id: {
+    attributes: {
+      'im:id': string;
+    };
+  };
+  [key: string]: any;
+  originalIndex?: number;
+}
+
 @Component({
   selector: 'app-albums',
   templateUrl: './albums.component.html',
