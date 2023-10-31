@@ -7,14 +7,14 @@
     </div>
 
     <div class="col" *ngFor="let album of albums | filter: searchKey: ['title.label', 'category.attributes.term', 'im:artist.label']">
-      <div class="card" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
+      <div class="card h-100" (click)="redirectToAlbum(album.link.attributes.href)" style="cursor: pointer;">
         <img [src]="album['im:image'][2].label" class="card-img-top" alt="{{ album.title.label }} Cover">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <div class="row">
             <div class="col-md-8">
-              <h4 class="card-title">{{ album['im:name'].label }}</h4>
-              <h6 class="card-title">{{ album['im:artist'].label }}</h6>
-              <p class="card-text">{{ album.category.attributes.term }}</p>
+              <h4 class="card-title text-truncate">{{ album['im:name'].label }}</h4>
+              <h6 class="card-artist text-truncate">{{ album['im:artist'].label }}</h6>
+              <p class="card-text text-truncate">{{ album.category.attributes.term }}</p>
             </div>
             <div class="col-md-4 text-end">
               <i [ngClass]="favoriteAlbums[album.id.attributes['im:id']] ? 'bi bi-heart-fill text-danger' : 'bi bi-heart'" (click)="toggleFavorite(album); $event.stopPropagation();"></i>
