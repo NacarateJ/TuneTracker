@@ -71,6 +71,14 @@ export class AlbumsComponent implements OnInit {
   ngOnInit() {
     this.fetchedData$ = this.dataService.getData();
 
+    this.fetchedData$.subscribe((data) => {
+      this.albums = data.feed.entry.map((entry: Album, index: number) => ({
+        ...entry,
+        originalIndex: index,
+      }));
+      this.sortAlbums();
+    });
+
     this.albumsStateService.showAlbums$.subscribe((showAlbums) => {
       this.showAlbums = showAlbums;
     });
