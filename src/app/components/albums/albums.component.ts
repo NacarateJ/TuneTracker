@@ -54,6 +54,16 @@ export class AlbumsComponent implements OnInit {
     });
   }
 
+  toggleFavorite(album: any) {
+    const albumId = album.id.attributes['im:id'];
+    if (this.favoriteAlbums[albumId]) {
+      delete this.favoriteAlbums[albumId];
+    } else {
+      this.favoriteAlbums[albumId] = new Date().getTime();
+    }
+    this.sortAlbums();
+  }
+
   redirectToAlbum(albumLink: string) {
     window.open(albumLink, '_blank');
   }
