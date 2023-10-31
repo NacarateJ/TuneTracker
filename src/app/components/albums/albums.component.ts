@@ -24,6 +24,8 @@ export class AlbumsComponent implements OnInit {
   noResultsMessage: string =
     'Sorry, there are no albums that match your search';
   showAlbums: boolean = false;
+  favoriteAlbums: { [key: string]: number } = {};
+  albums: any[] = [];
 
   // Dependency injection - allows the component to use the service to fetch data
   constructor(
