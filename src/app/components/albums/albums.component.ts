@@ -33,6 +33,27 @@ export class AlbumsComponent implements OnInit {
     private albumsStateService: AlbumsStateService
   ) {}
 
+  sortAlbums() {
+    // Sort by favorites and then by the timestamp or original index
+    this.albums.sort((a, b) => {
+      const aId = a.id.attributes['im:id'];
+      const bId = b.id.attributes['im:id'];
+      const aIsFavorite = this.favoriteAlbums[aId];
+      const bIsFavorite = this.favoriteAlbums[bId];
+
+      if (aIsFavorite && bIsFavorite) {
+        return bIsFavorite - aIsFavorite;
+      }
+      if (aIsFavorite && !bIsFavorite) {
+        return -1;
+      }
+      if (!aIsFavorite && bIsFavorite) {
+        return 1;
+      }
+      return a.originalIndex - b.originalIndex;
+    });
+  }
+
   redirectToAlbum(albumLink: string) {
     window.open(albumLink, '_blank');
   }
