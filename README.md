@@ -4,7 +4,7 @@ TuneTracker is a web application that provides access to the top 100 albums base
 
 <div align="center">
 
-https://github.com/NacarateJ/tuneTracker/assets/114256348/c1c281ae-3d4f-4315-b72a-13f585920bda
+https://github.com/NacarateJ/tuneTracker/assets/114256348/3cce69ef-51e0-40ab-8139-e666ea51c69c
 
 <div/>
 
