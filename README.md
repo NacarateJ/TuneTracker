@@ -21,6 +21,7 @@ https://github.com/NacarateJ/tuneTracker/assets/114256348/c1c281ae-3d4f-4315-b72
 - Show albums based on button click.
 - Window scrolling to improve user experience.
 - Search bar to filter albums by title, category, or artist name.
+- Click on the heart icon to favorite or "unfavorite" an album. Favorited albums will appear at the top of the list, sorted by the most recently favorited.
 - Sticky navbar to facilitate search and improve user experience.
 - An error message is displayed if no albums matching the user's search are found.
 - Click on an album to view more details and listen to the tracks.
