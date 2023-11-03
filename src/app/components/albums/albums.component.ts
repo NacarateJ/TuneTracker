@@ -26,6 +26,8 @@ export class AlbumsComponent implements OnInit {
   showAlbums: boolean = false;
   favoriteAlbums: { [key: string]: number } = {};
   albums: any[] = [];
+  hasError: boolean = false;
+  errorMessage: string = '';
 
   // Dependency injection - allows the component to use the service to fetch data
   constructor(
@@ -80,12 +82,19 @@ export class AlbumsComponent implements OnInit {
   ngOnInit() {
     this.fetchedData$ = this.dataService.getData();
 
-    this.fetchedData$.subscribe((data) => {
-      this.albums = data.feed.entry.map((entry: Album, index: number) => ({
-        ...entry,
-        originalIndex: index,
-      }));
-      this.sortAlbums();
+    this.fetchedData$.subscribe({
+      next: (data) => {
+        this.albums = data.feed.entry.map((entry: Album, index: number) => ({
+          ...entry,
+          originalIndex: index,
+        }));
+        this.sortAlbums();
+      },
+      error: (error) => {
+        this.hasError = true;
+        this.errorMessage = 'Failed to fetch albums. Please try again later.';
+        console.error('Error fetching data: ', error);
+      },
     });
 
     this.albumsStateService.showAlbums$.subscribe((showAlbums) => {
