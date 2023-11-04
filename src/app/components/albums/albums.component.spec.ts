@@ -24,18 +24,22 @@ describe('AlbumsComponent', () => {
     showAlbums$: Observable<boolean>;
   }
 
-  beforeEach(() => {
+  function configureTestingModule(
+    dataServiceConfig: DataServiceConfig,
+    albumsStateServiceConfig: AlbumsStateServiceConfig
+  ) {
     TestBed.configureTestingModule({
       declarations: [AlbumsComponent],
       providers: [
-        { provide: DataService, useValue: DataServiceConfig },
-        { provide: AlbumsStateService, useValue: AlbumsStateServiceConfig },
+        { provide: DataService, useValue: dataServiceConfig },
+        { provide: AlbumsStateService, useValue: albumsStateServiceConfig },
       ],
-    });
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AlbumsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }
 
   it('should create', () => {
     expect(component).toBeTruthy();
