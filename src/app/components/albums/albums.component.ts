@@ -97,12 +97,28 @@ export class AlbumsComponent implements OnInit {
       },
     });
 
-    this.albumsStateService.showAlbums$.subscribe((showAlbums) => {
-      this.showAlbums = showAlbums;
+    this.albumsStateService.showAlbums$.subscribe({
+      next: (showAlbums) => {
+        this.showAlbums = showAlbums;
+      },
+      error: (error) => {
+        this.hasError = true;
+        this.errorMessage =
+          'An error occurred while managing albums visibility.';
+        console.error('Error in albumsStateService subscription: ', error);
+      },
     });
 
-    this.dataService.search.subscribe((val: any) => {
-      this.searchKey = val;
+    this.dataService.search.subscribe({
+      next: (val: any) => {
+        this.searchKey = val;
+      },
+      error: (error) => {
+        this.hasError = true;
+        this.errorMessage =
+          'An error occurred while handling search functionality.';
+        console.error('Error in dataService.search subscription: ', error);
+      },
     });
   }
 }
