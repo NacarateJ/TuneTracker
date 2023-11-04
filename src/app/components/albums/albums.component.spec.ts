@@ -8,6 +8,11 @@ import { of } from 'rxjs';
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
   let fixture: ComponentFixture<AlbumsComponent>;
+  let consoleErrorSpy: jasmine.Spy;
+
+  beforeEach(() => {
+    consoleErrorSpy = spyOn(console, 'error');
+  });
 
   // Create mock services
   const dataServiceStub = {
