@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AlbumsComponent } from './albums.component';
 import { DataService } from 'src/app/services/data.service';
 import { AlbumsStateService } from 'src/app/services/albums-state.service';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 describe('AlbumsComponent', () => {
   let component: AlbumsComponent;
@@ -14,22 +14,22 @@ describe('AlbumsComponent', () => {
     consoleErrorSpy = spyOn(console, 'error');
   });
 
-  // Create mock services
-  const dataServiceStub = {
-    getData: () => of([]),
-    search: of(''),
-  };
+  // Define the structure of the mocked services
+  interface DataServiceConfig {
+    getData: () => Observable<any>;
+    search: Observable<string>;
+  }
 
-  const albumsStateServiceStub = {
-    showAlbums$: of(false),
-  };
+  interface AlbumsStateServiceConfig {
+    showAlbums$: Observable<boolean>;
+  }
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [AlbumsComponent],
       providers: [
-        { provide: DataService, useValue: dataServiceStub },
-        { provide: AlbumsStateService, useValue: albumsStateServiceStub },
+        { provide: DataService, useValue: DataServiceConfig },
+        { provide: AlbumsStateService, useValue: AlbumsStateServiceConfig },
       ],
     });
     fixture = TestBed.createComponent(AlbumsComponent);
