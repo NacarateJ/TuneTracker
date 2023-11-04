@@ -42,6 +42,10 @@ describe('AlbumsComponent', () => {
   }
 
   it('should create', () => {
+    configureTestingModule(
+      { getData: () => of([]), search: of('') },
+      { showAlbums$: of(false) }
+    );
     expect(component).toBeTruthy();
   });
 });
