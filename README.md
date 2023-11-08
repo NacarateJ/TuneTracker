@@ -13,7 +13,7 @@ https://github.com/NacarateJ/tuneTracker/assets/114256348/3cce69ef-51e0-40ab-813
 ### Live Application
 The application is deployed on Netlify and can be accessed at the following URL:
 
-[![TuneTracker](https://img.shields.io/badge/TuneTracker-78a9b4)](https://tune-tracker.netlify.app/)
+[![🎵 TuneTracker](https://img.shields.io/badge/🎵-TuneTracker-78a9b4)](https://tune-tracker.netlify.app/)
 
 Feel free to test out all the features and report any issues.
   
